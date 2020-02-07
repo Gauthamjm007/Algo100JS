@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Train</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const rootHandle = document.getElementById("root");
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "object.json");
+      xhr.send();
+
+      xhr.onload = function() {
+        const users = JSON.parse(xhr.responseText);
+        const litag = document.createElement("li");
+
+        rootHandle.appendChild(litag);
+      };
+
+      xhr.onerror = function() {
+        console.log("Error");
+      };
+    </script>
+  </body>
+</html>

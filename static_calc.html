@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Static Calcuator</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const math_calc = {
+        a: 10,
+        b: 20,
+        add() {
+          return this.a + this.b;
+        },
+
+        subtract() {
+          return Math.abs(this.b - this.a);
+        },
+
+        multiply() {
+          return this.a * this.b;
+        },
+
+        divide() {
+          return this.a / this.b;
+        }
+      };
+      const ulTag = document.createElement("ul");
+      const rootHandle = document.getElementById("root");
+      rootHandle.appendChild(ulTag);
+      const liTag = document.createElement("li");
+
+      for (i = 0; i < 5; i++) {
+          liTag.innerHTML=`
+          Addition:
+          ${math_calc.add()}
+          `
+      }
+    </script>
+  </body>
+</html>
